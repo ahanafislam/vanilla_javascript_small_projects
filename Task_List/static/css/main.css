@@ -1,0 +1,22 @@
+#task-form{
+    max-width: 70%;
+    margin: auto;
+}
+
+.bg-red{
+    background-color: #ff4545;
+}
+
+.bg-red:hover{
+    background-color: #c74c4c;
+}
+
+.card{
+    max-width: 70%;
+    margin: 2rem auto;
+}
+
+.list-group{
+    max-width: 50rem;
+    margin: auto;
+}
