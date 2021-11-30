@@ -12,25 +12,29 @@
             font-family: 'Play', sans-serif;
         }
     </style>
-    <title>Document</title>
+    <title>Number Guessing Game</title>
 </head>
 <body class="bg-gray-800">
     <div class="box-content">
-        <h1 class="text-3xl font-bold text-white text-center p-1 bg-opacity-50 bg-gradient-to-l from-purple-400 via-pink-500 to-red-500 fixed" style="width: 100%;">
+        <h1 class="text-3xl rounded font-bold text-white text-center p-1 bg-opacity-50 bg-gradient-to-l from-purple-400 via-pink-500 to-red-500 fixed" style="width: 100%;">
             Number Guessing Game
         </h1>
     </div>
     <div class="h-screen flex flex-col items-center justify-center">
-        <div class="h-screen rounded-lg text-gray-700 bg-gray-100 bg-opacity-75" style="max-width: 60%; max-height: 15rem;">
-            <div class="text-center">
-                <h1 class="text-xl p-1 text-center box-content font-bold text-white text-center p-1 bg-opacity-50 bg-gradient-to-l from-purple-400 via-pink-500 to-red-500 rounded-lg">
-                    Guess the Number Betwen <span>1</span> to <span>10</span>
+        <div class="h-screen text-center rounded-lg text-gray-700 bg-gray-100 bg-opacity-75" style="max-width: 70%; max-height: 16rem;">
+            <div class="play-ground">
+                <h1 class="text-xl p-1 text-center box-content font-bold text-white text-center p-1 bg-opacity-50 bg-gradient-to-l from-purple-400 via-pink-500 to-red-500 rounded">
+                    Guess the Number Betwen <span id="min-num"></span> to <span id="max-num"></span>
                 </h1>
-                <h1 class="text-xl mt-3 text-red-700">8 is not correct . It's too high</h1>
-                <input type="text" class="rounded p-1 mt-4" placeholder="Type guessing number">
-                <button class="bg-gradient-to-r text-white from-purple-400 via-pink-500 to-red-500 rounded p-1">Submit</button>
-                <h1 class="text-l mt-3 text-yellow-700">2 guesses left</h1>
+                <h1 id="message" class="text-xl mt-3 mx-auto p-3" style="max-width: fit-content;">Type your guessing number</h1>
+                <form id="guess-form">
+                    <input type="text" id="guess-input" class="rounded p-1 mt-4" placeholder="Type guessing number">
+                    <button type="submit" id="guess-btn" class="bg-gradient-to-r text-white bg-purple-600 hover:bg-purple-900 rounded p-1">Submit</button>
+                </form>
+                <h1 id="guess-left" class="text-l mt-3 text-yellow-700">You can guess only 3 times!</h1>
             </div>
+        </div>
     </div>
+    <script src="static/js/app.js"></script>
 </body>
 </html>
