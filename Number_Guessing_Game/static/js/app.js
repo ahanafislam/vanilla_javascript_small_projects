@@ -60,8 +60,8 @@ function getGameResult(e){
         }
     }
 
-    let mode = gameMode.value
-    console.table({winningNum, maxNum, minNum, mode});
+    // let mode = gameMode.value
+    // console.table({winningNum, maxNum, minNum, mode});
 }
 
 // Create gameOver Function
