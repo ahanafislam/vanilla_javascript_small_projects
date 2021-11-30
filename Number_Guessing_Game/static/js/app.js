@@ -24,7 +24,7 @@ function main(){
     // Listen for guess
     guessForm.addEventListener('submit', getGameResult);
     // Listen for play again
-    guessForm.addEventListener('click',gameRestart);
+    guessForm.addEventListener('mousedown',gameRestart);
     
 }
 
@@ -68,11 +68,12 @@ function gameOver(win,msg){
     let color;
     win ? color = 'green' : color = 'red'; // win only taken true of false value
     // Change Css property
-    guessInput.style.display = 'none';
+    guessInput.hidden = true;
     guessBtn.textContent = "Play Again";
     guessBtn.type = 'button';
     guessBtn.classList.add('play-again');
     guessLeftUi.style.display = 'none';
+    guessInput.value = '';
 
     msgDisplay(msg,color);
 }
@@ -91,6 +92,16 @@ function getRandomNumber(min, max) {
 // Game restart
 function gameRestart(e){
     if(e.target.classList.contains('play-again')){
+        // Change Css property
+        guessInput.hidden = false;
+        guessBtn.textContent = "Submit";
+        guessBtn.type = 'submit';
+        guessLeftUi.style.display = 'block';
+        guessLeftUi.textContent = 'You can guess only 3 times!';
+        msgDisplay("Type your guessing number","#333");
+        winningNum = getRandomNumber(minNum, maxNum);
+        guessLeft = 3;
+        guessBtn.classList.remove('play-again');
         console.log("%c I'm clicked!!","color:red;");
     }
 }
